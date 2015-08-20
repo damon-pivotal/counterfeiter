@@ -110,8 +110,6 @@ func getSourceDir(arg string) string {
 		arg = filepath.Join(cwd(), arg)
 	}
 
-	arg, err := filepath.EvalSymlinks(arg)
-
 	stat, err := os.Stat(arg)
 	if err != nil {
 		fail("No such file or directory '%s'", arg)
